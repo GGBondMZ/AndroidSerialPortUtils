@@ -301,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 handler.removeCallbacksAndMessages(null);
-                handler.sendEmptyMessageDelayed(1, 200);
+                handler.sendEmptyMessageDelayed(1, 50);
             }
         });
     }
