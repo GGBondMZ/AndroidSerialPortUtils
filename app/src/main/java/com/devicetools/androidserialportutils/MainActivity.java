@@ -282,12 +282,13 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     if (edInput.getText().toString().length() > 0) {
                         if (serialHelper.isOpen()) {
-                            try {
-                                Long.parseLong(edInput.getText().toString(), 16);
-                            } catch (NumberFormatException e) {
-                                Toast.makeText(getBaseContext(), R.string.tips_formatting_hex_error, Toast.LENGTH_SHORT).show();
-                                return;
-                            }
+                            // 去除输入格式校验
+                            // try {
+                            //     Long.parseLong(edInput.getText().toString(), 16);
+                            // } catch (NumberFormatException e) {
+                            //     Toast.makeText(getBaseContext(), R.string.tips_formatting_hex_error, Toast.LENGTH_SHORT).show();
+                            //     return;
+                            // }
                             serialHelper.sendHex(edInput.getText().toString());
                             logListAdapter.addData(sDateFormat.format(new Date()) + " Tx:==>" + edInput.getText().toString());
                             if (logListAdapter.getData() != null && logListAdapter.getData().size() > 0) {
