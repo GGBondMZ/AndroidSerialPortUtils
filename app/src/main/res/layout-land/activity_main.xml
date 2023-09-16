@@ -190,7 +190,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
-                android:text="02030000000AC5FE" />
+                android:text="FE0100000002A9C4" />
 
             <Button
                 android:id="@+id/btn_open"
