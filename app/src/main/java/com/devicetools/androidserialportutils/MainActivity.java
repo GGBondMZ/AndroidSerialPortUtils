@@ -302,7 +302,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 handler.removeCallbacksAndMessages(null);
-                handler.sendEmptyMessageDelayed(1, 50);
+                handler.sendEmptyMessageDelayed(1, 35);
             }
         });
     }
@@ -319,8 +319,7 @@ public class MainActivity extends AppCompatActivity {
 
         final EditText inputField = new EditText(this);
         InputFilter filter = new InputFilter() {
-            public CharSequence filter(CharSequence source, int start, int end,
-                                       Spanned dest, int dstart, int dend) {
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
                 for (int i = start; i < end; i++) {
                     if (!Character.isDigit(source.charAt(i))) {
                         return "";
