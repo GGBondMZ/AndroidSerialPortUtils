@@ -109,11 +109,13 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         if (radioGroup.getCheckedRadioButtonId() == R.id.radioButton1) {
+                            Log.d(TAG, "Rx:<==" + new String(comBean.bRec, StandardCharsets.UTF_8));
                             logListAdapter.addData(comBean.sRecTime + " Rx:<==" + new String(comBean.bRec, StandardCharsets.UTF_8));
                             if (logListAdapter.getData() != null && logListAdapter.getData().size() > 0) {
                                 recy.smoothScrollToPosition(logListAdapter.getData().size());
                             }
                         } else {
+                            Log.d(TAG, "Rx:<==" + ByteUtil.ByteArrToHex(comBean.bRec));
                             logListAdapter.addData(comBean.sRecTime + " Rx:<==" + ByteUtil.ByteArrToHex(comBean.bRec));
                             if (logListAdapter.getData() != null && logListAdapter.getData().size() > 0) {
                                 recy.smoothScrollToPosition(logListAdapter.getData().size());
@@ -290,6 +292,7 @@ public class MainActivity extends AppCompatActivity {
                             //     return;
                             // }
                             serialHelper.sendHex(edInput.getText().toString());
+                            Log.d(TAG," Tx:==>" + edInput.getText().toString());
                             logListAdapter.addData(sDateFormat.format(new Date()) + " Tx:==>" + edInput.getText().toString());
                             if (logListAdapter.getData() != null && logListAdapter.getData().size() > 0) {
                                 recy.smoothScrollToPosition(logListAdapter.getData().size());
