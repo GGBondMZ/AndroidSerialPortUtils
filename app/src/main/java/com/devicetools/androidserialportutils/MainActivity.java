@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
                             //     return;
                             // }
                             serialHelper.sendHex(edInput.getText().toString());
-                            Log.d(TAG," Tx:==>" + edInput.getText().toString());
+                            Log.d(TAG, " Tx:==>" + edInput.getText().toString());
                             logListAdapter.addData(sDateFormat.format(new Date()) + " Tx:==>" + edInput.getText().toString());
                             if (logListAdapter.getData() != null && logListAdapter.getData().size() > 0) {
                                 recy.smoothScrollToPosition(logListAdapter.getData().size());
